@@ -13,7 +13,7 @@ export const multerConfig = {
         if (error) {
           callback(error, file.filename)
         }
-        const filename = `${hash.toString('HEX')}.png`
+        const filename = `${hash.toString('hex')}.png`
         callback(null, filename)
       })
     }
@@ -26,6 +26,7 @@ export const multerConfig = {
       'image/jpeg',
       'image/jpg',
       'image/png'
+      'image/heic'
     ];
 
     if (formats.includes(file.mimetype)) {
